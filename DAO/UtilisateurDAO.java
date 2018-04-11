@@ -29,7 +29,7 @@ public class UtilisateurDAO {
         Statement transmission;
         transmission = laConnection.createStatement();
         ResultSet resultat;
-        String sql = "SELECT * FROM commercial;";
+        String sql = "SELECT * FROM Utilisateur;";
         resultat = transmission.executeQuery(sql);
         while(resultat.next()){
             Utilisateur u = new Utilisateur(resultat.getInt("Id_Utilisateur"), resultat.getString("Mail_Utilisateur"), resultat.getString("Mdp_Utilisateur"), resultat.getString("Adresse_Utilisateur"), resultat.getString("Cp_Utilisateur"), resultat.getString("Ville_Utilisateur"), resultat.getString("Telephone_Utilisateur"), resultat.getString("Nom_Utilisateur"), resultat.getString("Prenom_Utilisateur"), resultat.getString("Statut_Utilisateur"));
@@ -40,7 +40,7 @@ public class UtilisateurDAO {
     public void addCommercial(Utilisateur u) throws SQLException{
         Statement transmission;
         transmission = laConnection.createStatement();
-        String sql = "INSERT INTO utilisateur (Mail_Utilisateur, Mdp_Utilisateur, Adresse_Utilisateur, Cp_Utilisateur, Ville_Utilisateur, Telephone_Utilisateur, Nom_Utilisateur, Prenom_Utilisateur, Statut_Utilisateur) VALUES ('"+u.getMail_Utilisateur()+"','"+u.getMdp_Utilisateur()+"',"+u.getAdresse_Utilisateur()+",'"+u.getCp_Utilisateur()+"','"+u.getVille_Utilisateur()+"','"+u.getTelephone_Utilisateur()+"','"+u.getNom_Utilisateur()+"','"+u.getPrenom_Utilisateur()+"','"+u.getStatut_Utilisateur()+");";
+        String sql = "INSERT INTO Utilisateur (Mail_Utilisateur, Mdp_Utilisateur, Adresse_Utilisateur, Cp_Utilisateur, Ville_Utilisateur, Telephone_Utilisateur, Nom_Utilisateur, Prenom_Utilisateur, Statut_Utilisateur) VALUES ('"+u.getMail_Utilisateur()+"','"+u.getMdp_Utilisateur()+"',"+u.getAdresse_Utilisateur()+",'"+u.getCp_Utilisateur()+"','"+u.getVille_Utilisateur()+"','"+u.getTelephone_Utilisateur()+"','"+u.getNom_Utilisateur()+"','"+u.getPrenom_Utilisateur()+"','"+u.getStatut_Utilisateur()+");";
         
         int res = transmission.executeUpdate(sql);
         

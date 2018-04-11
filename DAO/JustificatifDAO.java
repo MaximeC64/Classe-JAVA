@@ -29,7 +29,7 @@ public class JustificatifDAO {
         Statement transmission;
         transmission = laConnection.createStatement();
         ResultSet resultat;
-        String sql = "SELECT * FROM Notefrais;";
+        String sql = "SELECT * FROM Justificatif;";
         resultat = transmission.executeQuery(sql);
         while(resultat.next()){
             Justificatif j = new Justificatif(resultat.getInt("Id_Justificatif"), resultat.getString("Titre_Justificatif"), resultat.getString("Url_Justificatif"),resultat.getInt("Id_Depense"),resultat.getInt("Id_Notefrais"));
