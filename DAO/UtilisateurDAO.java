@@ -37,7 +37,7 @@ public class UtilisateurDAO {
         }
         return listUtilisateurs;
     }
-    public void addCommercial(Utilisateur u) throws SQLException{
+    public void addUtilisateur(Utilisateur u) throws SQLException{
         Statement transmission;
         transmission = laConnection.createStatement();
         String sql = "INSERT INTO Utilisateur (Mail_Utilisateur, Mdp_Utilisateur, Adresse_Utilisateur, Cp_Utilisateur, Ville_Utilisateur, Telephone_Utilisateur, Nom_Utilisateur, Prenom_Utilisateur, Statut_Utilisateur) VALUES ('"+u.getMail_Utilisateur()+"','"+u.getMdp_Utilisateur()+"',"+u.getAdresse_Utilisateur()+",'"+u.getCp_Utilisateur()+"','"+u.getVille_Utilisateur()+"','"+u.getTelephone_Utilisateur()+"','"+u.getNom_Utilisateur()+"','"+u.getPrenom_Utilisateur()+"','"+u.getStatut_Utilisateur()+");";
