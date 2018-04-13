@@ -14,9 +14,12 @@ import java.sql.SQLException;
  * @author utilisateur
  */
 public class GestionConnection {
-    private static final String url = "jdbc:mysql://87.98.154.146:3306/moralesmryexpens";
-    private static final String login = "moralesmryexpens";
-    private static final String mdp = "Expensemanager01";
+//    private static final String url = "jdbc:mysql://54.37.71.133:3306/expense_gr";
+//    private static final String login = "expense_gr";
+//    private static final String mdp = "123456";
+    private static final String url = "jdbc:mysql://localhost/expense_gr";
+    private static final String login = "root";
+    private static final String mdp = "";
     private static final String driver = "com.mysql.jdbc.Driver";
     private static Connection laConnection;
     

@@ -37,6 +37,19 @@ public class UtilisateurDAO {
         }
         return listUtilisateurs;
     }
+    public Utilisateur readOneUtilisateur(int id) throws SQLException{
+        Utilisateur oneUtilisateur = null;
+        Statement transmission;
+        transmission = laConnection.createStatement();
+        ResultSet resultat;
+        String sql = "SELECT * FROM Utilisateur WHERE Id_Utilisateur = "+id+";";
+        resultat = transmission.executeQuery(sql);
+        while(resultat.next()){
+            oneUtilisateur = new Utilisateur(resultat.getInt("Id_Utilisateur"), resultat.getString("Mail_Utilisateur"), resultat.getString("Mdp_Utilisateur"), resultat.getString("Adresse_Utilisateur"), resultat.getString("Cp_Utilisateur"), resultat.getString("Ville_Utilisateur"), resultat.getString("Telephone_Utilisateur"), resultat.getString("Nom_Utilisateur"), resultat.getString("Prenom_Utilisateur"), resultat.getString("Statut_Utilisateur"));
+        }
+        return oneUtilisateur;
+    }
+    
     public void addUtilisateur(Utilisateur u) throws SQLException{
         Statement transmission;
         transmission = laConnection.createStatement();

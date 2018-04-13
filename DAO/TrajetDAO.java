@@ -32,7 +32,7 @@ public class TrajetDAO {
         String sql = "SELECT * FROM Depense, Trajet;";
         resultat = transmission.executeQuery(sql);
         while(resultat.next()){
-            Trajet t = new Trajet(resultat.getString("Duree_Trajet"), resultat.getString("VilleDepart_Trajet"), resultat.getString("VilleArrivee_Trajet"), resultat.getString("DateAller_Trajet"), resultat.getString("DateRetour_Trajet"), resultat.getFloat("Kilometre_Trajet"), resultat.getInt("Id_Depense"), resultat.getString("DatePaiement_Depense"), resultat.getString("Libelle_Depense"), resultat.getString("Commentaire_Depense"), resultat.getFloat("MontantRemboursement_Depense"));
+            Trajet t = new Trajet(resultat.getString("Duree_Trajet"), resultat.getString("VilleDepart_Trajet"), resultat.getString("VilleArrivee_Trajet"), resultat.getString("DateAller_Trajet"), resultat.getString("DateRetour_Trajet"), resultat.getFloat("Kilometre_Trajet"), resultat.getInt("Id_Depense"), resultat.getString("DatePaiement_Depense"), resultat.getString("Libelle_Depense"), resultat.getString("Commentaire_Depense"), resultat.getFloat("MontantRemboursement_Depense"), resultat.getInt("Id_Notefrais"));
             listTrajet.add(t);
         }
         return listTrajet;

@@ -11,22 +11,24 @@ import java.util.ArrayList;
  *
  * @author utilisateur
  */
-public abstract class Depense {
+public class Depense {
     protected int Id_Depense;
     protected String DatePaiement_Depense; 
     protected String Libelle_Depense;
     protected String Commentaire_Depense;
     protected float MontantRemboursement_Depense; 
-    protected NoteFrais laNotefrais;
+    protected int Id_Notefrais;
+//    protected NoteFrais laNotefrais;
     protected ArrayList<Justificatif> lesJustificatifs;
 
-    public Depense(int Id_Depense, String DatePaiement_Depense, String Libelle_Depense, String Commentaire_Depense, float MontantRemboursement_Depense) {
+    public Depense(int Id_Depense, String DatePaiement_Depense, String Libelle_Depense, String Commentaire_Depense, float MontantRemboursement_Depense, int Id_Notefrais) {
         this.Id_Depense = Id_Depense;
         this.DatePaiement_Depense = DatePaiement_Depense;
         this.Libelle_Depense = Libelle_Depense;
         this.Commentaire_Depense = Commentaire_Depense;
         this.MontantRemboursement_Depense = MontantRemboursement_Depense;
-        this.laNotefrais = null;
+        this.Id_Notefrais = Id_Notefrais;
+//        this.laNotefrais = null;
         this.lesJustificatifs = new ArrayList<Justificatif>();
     }
 
@@ -60,10 +62,16 @@ public abstract class Depense {
     public void setMontantRemboursement_Depense(float MontantRemboursement_Depense) {
         this.MontantRemboursement_Depense = MontantRemboursement_Depense;
     }
-    public NoteFrais getLaNotefrais() {
-        return laNotefrais;
+    public int getId_Notefrais() {
+        return Id_Notefrais;
     }
-    public void setLaNotefrais(NoteFrais laNotefrais) {
-        this.laNotefrais = laNotefrais;
+    public void setId_Notefrais(int Id_Notefrais) {
+        this.Id_Notefrais = Id_Notefrais;
     }
+//    public NoteFrais getLaNotefrais() {
+//        return laNotefrais;
+//    }
+//    public void setLaNotefrais(NoteFrais laNotefrais) {
+//        this.laNotefrais = laNotefrais;
+//    }
 }

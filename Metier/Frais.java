@@ -12,8 +12,8 @@ package Metier;
 public class Frais extends Depense{
     private String Date_Frais;
 
-    public Frais(String Date_Frais, int Id_Depense, String DatePaiement_Depense, String Libelle_Depense, String Commentaire_Depense, float MontantRemboursement_Depense) {
-        super(Id_Depense, DatePaiement_Depense, Libelle_Depense, Commentaire_Depense, MontantRemboursement_Depense);
+    public Frais(String Date_Frais, int Id_Depense, String DatePaiement_Depense, String Libelle_Depense, String Commentaire_Depense, float MontantRemboursement_Depense, int Id_Notefrais) {
+        super(Id_Depense, DatePaiement_Depense, Libelle_Depense, Commentaire_Depense, MontantRemboursement_Depense, Id_Notefrais);
         this.Date_Frais = Date_Frais;
     }
 

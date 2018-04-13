@@ -37,6 +37,19 @@ public class NoteFraisDAO {
         }
         return listNotefrais;
     }
+    public ArrayList<NoteFrais> listNoteFraisById(int id) throws SQLException{
+        ArrayList<NoteFrais> listNotefrais = new ArrayList<NoteFrais>();
+        Statement transmission;
+        transmission = laConnection.createStatement();
+        ResultSet resultat;
+        String sql = "SELECT * FROM Notefrais WHERE Id_Utilisateur = "+id+";";
+        resultat = transmission.executeQuery(sql);
+        while(resultat.next()){
+            NoteFrais nf = new NoteFrais(resultat.getInt("Id_Notefrais"), resultat.getString("Date_Notefrais"), resultat.getString("DateSoumission_Notefrais"), resultat.getString("Commentaire_Notefrais"), resultat.getInt("Id_Utilisateur"), resultat.getInt("Id_Client"));
+            listNotefrais.add(nf);
+        }
+        return listNotefrais;
+    }
     public void updateNoteFrais(NoteFrais nf) throws SQLException{
         Statement transmission;
         transmission = laConnection.createStatement();

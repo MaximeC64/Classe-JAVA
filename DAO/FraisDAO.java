@@ -32,7 +32,7 @@ public class FraisDAO {
         String sql = "SELECT * FROM Depense, Frais;";
         resultat = transmission.executeQuery(sql);
         while(resultat.next()){
-            Frais f = new Frais(resultat.getString("Date_Frais"), resultat.getInt("Id_Depense"), resultat.getString("DatePaiement_Depense"), resultat.getString("Libelle_Depense"), resultat.getString("Commentaire_Depense"), resultat.getFloat("MontantRemboursement_Depense"));
+            Frais f = new Frais(resultat.getString("Date_Frais"), resultat.getInt("Id_Depense"), resultat.getString("DatePaiement_Depense"), resultat.getString("Libelle_Depense"), resultat.getString("Commentaire_Depense"), resultat.getFloat("MontantRemboursement_Depense"), resultat.getInt("Id_Notefrais"));
             listFrais.add(f);
         }
         return listFrais;
